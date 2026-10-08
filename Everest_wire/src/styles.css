@@ -201,10 +201,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .insights-empty > p { font-size: 12px; margin: 0; }
 
 .site-footer { background: #171918; color: #F4F1EA; padding: 42px 8.2% 22px; }
-.footer-brand { max-width: 1260px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-.footer-logo { display: block; width: clamp(180px, 28vw, 300px); height: auto; margin: 0 auto 18px; }
-.footer-tagline { max-width: 100%; margin: 0 0 16px; color: #F4F1EA; font: 500 clamp(20px, 1.5vw, 76px)/.9 var(--display); letter-spacing: -.015em; text-align: center; text-transform: uppercase; white-space: nowrap; }
-.footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px clamp(20px, 3vw, 42px); }
+.footer-brand { width: 100%; max-width: 1260px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
+.footer-logo { display: block; align-self: center; width: clamp(180px, 28vw, 300px); height: auto; margin: 0 auto 18px; }
+.footer-tagline { width: 100%; max-width: 100%; margin: 0 0 16px -40px; color: #F4F1EA; font: 500 clamp(10px, 4vw, 56px)/.9 var(--display); letter-spacing: -.015em; text-align: center; text-transform: uppercase; white-space: nowrap; }
+.footer-nav { display: flex; flex-wrap: wrap;  justify-content: center; gap: 12px clamp(20px, 3vw, 42px); }
 .footer-nav a { position: relative; color: #eee; font-size: 10px; font-weight: 600; letter-spacing: .045em; text-transform: uppercase; transition: color 200ms ease; }
 .footer-nav a:hover, .footer-nav a:focus-visible { color: var(--red); }
 .footer-contact { max-width: 1260px; min-width: 0; margin: 32px auto 24px; display: grid; grid-template-columns: max-content max-content; justify-content: space-between; gap: 28px; align-items: center; overflow-x: auto; }
