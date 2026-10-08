@@ -62,6 +62,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .hero { background: var(--red); min-height: 570px; color: #fff; position: relative; overflow: hidden; display: grid; grid-template-columns: minmax(0, 1fr) minmax(390px, .9fr); align-items: center; gap: 22px; padding: 48px 8.2% 42px; }
 .hero-grid, .page-hero-grid, .quote-cta-grid { position: absolute; inset: 0; pointer-events: none; opacity: .13; background-image: radial-gradient(rgba(255,255,255,.85) .7px, transparent .7px); background-size: 13px 13px; mask-image: linear-gradient(90deg, transparent 20%, #000 100%); }
 .hero-content { position: relative; z-index: 1; max-width: 610px; }
+.hero-overline { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.hero-origin { flex: 0 0 auto; font-size: 8px; line-height: 1.5; letter-spacing: .115em; text-align: right; }
 .hero h1, .page-hero h1 { font-family: var(--display); text-transform: uppercase; letter-spacing: -.018em; font-size: clamp(74px, 7.4vw, 112px); font-weight: 700; line-height: .86; margin: 26px 0 21px; }
 .hero h1 { color: #fff; }
 .hero-content > p, .page-hero-inner > p { font-size: 13px; line-height: 1.65; max-width: 490px; margin: 0; color: #fff; }
@@ -92,9 +94,13 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .text-link { display: inline-flex; align-items: center; gap: 12px; text-transform: uppercase; font-size: 9px; font-weight: 700; letter-spacing: .055em; border-bottom: 1px solid var(--red); padding: 0 0 6px; }
 .text-link span { font-size: 14px; color: var(--red); transition: transform .2s; }
 .text-link:hover span { transform: translate(3px,-2px); }
-.cert-marks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); align-content: center; padding: 24px clamp(20px, 3vw, 44px); background: #000; }
-.cert-mark { min-width: 0; min-height: 105px; padding: 16px 17px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; border-top: 1px solid #454545; border-left: 1px solid #454545; }
+.cert-marks { display: grid; grid-template-columns: repeat(24, minmax(0, 1fr)); align-content: center; padding: 24px clamp(20px, 3vw, 44px); background: #000; }
+.cert-mark { grid-column: span 6; min-width: 0; min-height: 105px; padding: 16px 17px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; border-top: 1px solid #454545; border-left: 1px solid #454545; }
 .cert-mark:nth-child(-n+4) { border-top: 0; }
+.cert-mark:first-child { border-left: 0; }
+.cert-mark:nth-child(5) { grid-column: 4 / span 6; border-left: 0; }
+.cert-mark:nth-child(6) { grid-column: 10 / span 6; }
+.cert-mark:nth-child(7) { grid-column: 16 / span 6; }
 .cert-mark strong { color: #fff; font-family: var(--display); font-size: clamp(25px, 2.5vw, 35px); font-weight: 700; text-transform: uppercase; line-height: .95; transition: color .22s; }
 .cert-mark-rule { display: block; width: 22px; height: 2px; flex: 0 0 2px; margin: 10px 0 8px; background: var(--red); transition: width .22s; }
 .cert-mark small { font-family: var(--mono); color: #aaa; font-size: 7px; letter-spacing: .075em; line-height: 1.45; }
@@ -103,6 +109,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .section { max-width: 1440px; padding: 104px 8.2%; margin: 0 auto; }
 .section-title { display: grid; grid-template-columns: 1.15fr .85fr; align-items: end; gap: 40px; margin-bottom: 39px; }
 .section-title h2, .quality-copy h2, .heritage-section h2, .leadership-section h2, .contact-form-heading h2, .lab-feature h2 { font-family: var(--display); text-transform: uppercase; font-size: clamp(48px, 5.4vw, 78px); line-height: .84; letter-spacing: -.015em; margin: 19px 0 0; }
+.products-section .section-title { grid-template-columns: 1fr; }
+.products-section .section-title h2 { font-size: clamp(22px, 5.4vw, 78px); }
+.products-section .section-title h2 span { white-space: nowrap; }
+.products-section .section-title > p { max-width: 620px; }
 .section-title > p { color: #575757; line-height: 1.7; font-size: 13px; max-width: 420px; margin: 0 0 2px; }
 .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .product-module { background: var(--paper); border: 1px solid #e5e5e2; min-width: 0; }
@@ -192,19 +202,24 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .site-footer { background: #171918; color: #F4F1EA; padding: 42px 8.2% 22px; }
 .footer-brand { max-width: 1260px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; }
-.footer-tagline { max-width: 100%; margin: 0 0 16px; color: #F4F1EA; font: 800 clamp(23px, 6vw, 76px)/.9 var(--display); letter-spacing: -.015em; text-align: center; text-transform: uppercase; white-space: nowrap; }
+.footer-logo { display: block; width: clamp(180px, 28vw, 300px); height: auto; margin: 0 auto 18px; }
+.footer-tagline { max-width: 100%; margin: 0 0 16px; color: #F4F1EA; font: 500 clamp(20px, 1.5vw, 76px)/.9 var(--display); letter-spacing: -.015em; text-align: center; text-transform: uppercase; white-space: nowrap; }
 .footer-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px clamp(20px, 3vw, 42px); }
 .footer-nav a { position: relative; color: #eee; font-size: 10px; font-weight: 600; letter-spacing: .045em; text-transform: uppercase; transition: color 200ms ease; }
 .footer-nav a:hover, .footer-nav a:focus-visible { color: var(--red); }
-.footer-contact { max-width: 1260px; margin: 32px auto 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 28px; align-items: start; }
+.footer-contact { max-width: 1260px; min-width: 0; margin: 32px auto 24px; display: grid; grid-template-columns: max-content max-content; justify-content: space-between; gap: 28px; align-items: center; overflow-x: auto; }
 .footer-origin, .footer-contact-links { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; }
 .footer-since, .footer-country { color: #c4c4c1; font-size: 9px; letter-spacing: .04em; }
 .footer-origin p { max-width: 280px; margin: 5px 0 0; color: #aaa; font-size: 11px; line-height: 1.5; }
-.footer-contact-links { align-items: center; padding-top: 3px; }
+.footer-contact-links { flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: flex-start; gap: 8px 12px; padding-top: 3px; white-space: nowrap; }
+.footer-contact-icon, .footer-location-icon { display: block; flex: 0 0 16px; width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.footer-contact-icon { margin-right: 2px; }
 .footer-contact-links a, .footer-contact address { color: #ddd; font-size: 11px; line-height: 1.7; }
 .footer-contact-links a { transition: color 200ms ease; }
+.footer-contact-links a + a { border-left: 1px solid #686969; padding-left: 12px; }
 .footer-contact-links a:hover { color: var(--red); }
-.footer-contact address { justify-self: end; font-style: normal; text-align: right; }
+.footer-contact address { display: flex; align-items: center; gap: 8px; justify-self: end; font-style: normal; text-align: right; white-space: nowrap; }
+.footer-contact address span { flex: 0 0 auto; white-space: nowrap; }
 .footer-bottom { max-width: 1260px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; border-top: 1px solid #494a4a; padding: 14px 0 0; color: #aaa; font-size: 8px; letter-spacing: .05em; }
 .footer-bottom span:nth-child(2) { text-align: center; }
 
@@ -468,6 +483,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .cta-actions { flex-direction: column; align-items: stretch; }
   .insights-empty { grid-template-columns: 1fr; gap: 12px; padding: 16px 0; }
   .site-footer { padding: 26px 6% 14px; }
+  .footer-logo { width: clamp(155px, 42vw, 220px); margin-bottom: 12px; }
   .footer-tagline { margin-bottom: 8px; }
   .footer-nav { max-width: 460px; gap: 3px 18px; }
   .footer-origin, .footer-contact-links { align-items: center; }
@@ -592,6 +608,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 680px) {
   .product-grid { grid-template-columns: 1fr; }
   .cert-marks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cert-mark { grid-column: auto; }
 }
 
 @media (max-width: 1100px) {
@@ -631,12 +648,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 800px) {
   .footer-tagline { margin-bottom: 8px; }
   .footer-nav { gap: 3px 18px; }
-  .footer-contact {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 10px 18px;
-    margin: 18px auto 14px;
-  }
-  .footer-contact address { grid-column: 1 / -1; justify-self: center; text-align: center; }
+  .footer-contact { justify-content: start; gap: 28px; margin: 18px auto 14px; }
 }
 
 @media (max-width: 520px) {
@@ -644,11 +656,10 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .chargecore-copy h2 { font-size: clamp(42px, 13vw, 67px); }
   .chargecore-product h2 { font-size: clamp(42px, 13vw, 67px); }
   .footer-tagline { font-size: clamp(23px, 8vw, 42px); }
-  .footer-contact { grid-template-columns: 1fr; gap: 5px; margin: 12px auto 8px; text-align: center; }
-  .footer-contact address { grid-column: auto; }
+  .footer-contact { gap: 24px; margin: 12px auto 8px; }
   .footer-origin { gap: 3px; }
   .footer-origin p { margin-top: 2px; line-height: 1.35; }
-  .footer-contact-links { gap: 0; }
+  .footer-contact-links { gap: 6px; }
   .footer-contact-links a,
   .footer-contact address { line-height: 1.25; }
   .inquiry-form input,

@@ -775,23 +775,25 @@ function ChargecoreChargingGunSVG() {
 function Footer({ footerRef }) {
   return <footer className="site-footer" ref={footerRef}>
     <div className="footer-brand">
+      <img className="footer-logo" src="/images/final%20logo%20Everest%20white%20logo.png" alt="Everest" />
       <p className="footer-tagline">The No Problem Cables</p>
       <nav className="footer-nav" aria-label="Footer navigation">
         {navItems.map(([name, href]) => <Link key={href} to={href}>{name}</Link>)}
       </nav>
     </div>
     <div className="footer-contact">
-      <div className="footer-origin">
+      {/* <div className="footer-origin">
         <span className="footer-since mono">EST. / 1965</span>
         <span className="footer-country mono">INDIA</span>
         <p>Wires, cables and electrical interconnection products. Manufacturing continuously since 1965.</p>
-      </div>
+      </div> */}
       <div className="footer-contact-links">
-        <a href="mailto:sales@everestcables.com">sales@everestcables.com</a>
+        <svg className="footer-contact-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 3a14 14 0 0 1-6-6l3-2-2-5Z" /></svg>
+        <a href="mailto:sales@everestcables.com">sales@everestcables.com </a>
         <a href="tel:+919971445656">+91 99714 45656</a>
         <a href="tel:+917011342634">+91 70113 42634</a>
       </div>
-      <address>No. 507, Ring Road Mall<br />21 Mangalam Place, Sector 3<br />Rohini, Delhi 110085, India</address>
+      <address><svg className="footer-location-icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg><span>No. 507, Ring Road Mall, 21 Mangalam Place, Sector 3, Rohini, Delhi 110085, India</span></address>
     </div>
     <div className="footer-bottom mono">
       <span>EVEREST CABLES & CONNECTORS PVT. LTD.</span>
@@ -826,7 +828,7 @@ function Home() {
   return <>
     <main>
       <section className="hero">
-      <div className="hero-grid" aria-hidden="true" /><div className="hero-content"><Eyebrow light>ENGINEERED CONNECTIONS / SINCE 1965</Eyebrow>
+      <div className="hero-grid" aria-hidden="true" /><div className="hero-content"><div className="hero-overline"><Eyebrow light>ENGINEERED CONNECTIONS / SINCE 1965</Eyebrow><span className="hero-origin mono">EST. / 1965<br />INDIA</span></div>
         <h1>From conductor<br />to connection.</h1>
         <p>Manufacturing wires and cables, moulded power cords, connectors and wiring harness assemblies since 1965—with integrated manufacturing and in-house testing.</p>
         <div className="hero-actions"><Link className="button button-white" to="/contact?type=quote">Request a quote <span>↗</span></Link><Link className="button button-outline-white" to="/products">Explore products <span>↗</span></Link></div>
@@ -845,7 +847,7 @@ function Home() {
       </div><div className="hero-caption mono">EVEREST CABLES & CONNECTORS / INDIA</div>
       </section>
       <CertStrip />
-      <section className="section products-section"><SectionTitle kicker="WHAT WE MAKE" title={<>One manufacturing system.<br />Multiple ways to connect.</>} text="From catalogue wires and cables to assemblies made to customer drawings, explore the product families built across Everest's integrated capabilities." /><ProductModules limit={4} /><div className="section-foot"><Link className="button button-dark" to="/products">View all product families <span>↗</span></Link><span className="mono">STANDARD / CATALOGUE &nbsp;·&nbsp; CUSTOMER DRAWING</span></div></section>
+      <section className="section products-section"><SectionTitle kicker="WHAT WE MAKE" title={<><span>One manufacturing system.</span><br /><span>Multiple ways to connect.</span></>} text="From catalogue wires and cables to assemblies made to customer drawings, explore the product families built across Everest's integrated capabilities." /><ProductModules limit={4} /><div className="section-foot"><Link className="button button-dark" to="/products">View all product families <span>↗</span></Link><span className="mono">STANDARD / CATALOGUE &nbsp;·&nbsp; CUSTOMER DRAWING</span></div></section>
       <section className="process-section"><div className="process-inner"><SectionTitle kicker="INTEGRATED MANUFACTURING" title={<>From copper<br />to connection.</>} text="A connected sequence across five integrated shops—bringing critical stages of wire, cable and assembly production under one operation." light /><ShopSequence illustrated /><div className="process-foot mono"><span>01—05 / MANUFACTURING SEQUENCE</span><span>COPPER DRAWING → COMPOUNDING → EXTRUSION → MOULDED CORD → HARNESS</span></div></div><div className="process-vertical-mark mono">INTEGRATED MANUFACTURING / 01—05</div></section>
       <section className="quality-band"><div className="quality-diagram">
         <svg className="quality-control-diagram" viewBox="0 0 560 300" role="img" aria-labelledby="quality-diagram-title quality-diagram-desc">
