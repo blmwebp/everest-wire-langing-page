@@ -12,10 +12,12 @@ const navItems = [
 ];
 
 const products = [
-  { title: 'Wires & cables', text: 'Electrical and interconnection products for power, data and equipment applications.', badge: 'STANDARD / CATALOGUE', tags: 'UL 758 · UL 62 · SELECT STYLES', art: 'cable' },
-  { title: 'Moulded power cords', text: 'Moulded cord assemblies for equipment and appliance connections.', badge: 'STANDARD / CATALOGUE', tags: 'MOULDING · CORD ASSEMBLY', art: 'cord' },
-  { title: 'Connectors', text: 'Connector-related assemblies and interconnection components.', badge: 'CONFIGURATION VARIES', tags: 'ASSEMBLY · TOOL ROOM', art: 'connector' },
-  { title: 'Wiring harness assemblies', text: 'Assemblies produced to customer drawings and specifications.', badge: 'MADE TO CUSTOMER DRAWING', tags: 'HARNESS ASSEMBLY · TESTING', art: 'harness' },
+  { title: 'Copper', text: 'Copper drawing and conductor-related manufacturing capabilities.', badge: 'MANUFACTURING CAPABILITY', tags: 'COPPER DRAWING · CONDUCTOR PREPARATION', art: 'copper', imageFile: 'pf1.png' },
+  // { title: 'PVC Compounds', text: 'In-house PVC compounding supporting material and cable manufacturing requirements.', badge: 'MANUFACTURING CAPABILITY', tags: 'COMPOUNDING · MATERIAL PREPARATION', art: 'pvc' },
+  { title: 'Wires & cables', text: 'Insulated wires and cables for applicable industrial and electrical applications.', badge: 'STANDARD / CATALOGUE', tags: 'UL 758 · UL 62 · SELECT STYLES', art: 'cable', imageFile: 'pf2.png' },
+  { title: 'Moulded power cords', text: 'Moulded cord products for applicable customer and equipment requirements.', badge: 'STANDARD / CATALOGUE', tags: 'MOULDING · CORD ASSEMBLY', art: 'cord', imageFile: 'pf3.png' },
+  { title: 'Connectors', text: 'Connection components and solutions for relevant cable and assembly applications.', badge: 'CONFIGURATION VARIES', tags: 'ASSEMBLY · TOOL ROOM', art: 'connector', imageFile: 'pf4.png' },
+  { title: 'Wiring harness assemblies', text: 'Integrated wiring assemblies manufactured to customer drawings and specifications.', badge: 'MADE TO CUSTOMER DRAWING', tags: 'HARNESS ASSEMBLY · TESTING', art: 'harness', imageFile: 'pf5.png' },
 ];
 const industries = [
   ['Energy & power', 'Cable and wire requirements across power distribution and equipment.', 'Power & control cables · House wiring'],
@@ -32,6 +34,40 @@ const certifications = [
   ['CE', 'European conformity marking', 'Applies to products within applicable European legislation and conformity requirements.'],
   ['RoHS', 'Restricted substances', 'Product-specific material compliance; request documentation for the selected product.'],
   ['REACH', 'Chemical substance regulation', 'Product-specific information is available on request.'],
+];
+
+const clients = [
+  { 
+    id: "client-01", 
+    name: "Approved Client Name", 
+    logo: "/clients/client-01.png",
+    url: "https://client-website.com"  // Optional
+  },
+  { 
+    id: "client-01", 
+    name: "Approved Client Name", 
+    logo: "/clients/client-01.png",
+    url: "https://client-website.com"  // Optional
+  },
+  { 
+    id: "client-01", 
+    name: "Approved Client Name", 
+    logo: "/clients/client-01.png",
+    url: "https://client-website.com"  // Optional
+  },
+  { 
+    id: "client-01", 
+    name: "Approved Client Name", 
+    logo: "/clients/client-01.png",
+    url: "https://client-website.com"  // Optional
+  },
+  { 
+    id: "client-01", 
+    name: "Approved Client Name", 
+    logo: "/clients/client-01.png",
+    url: "https://client-website.com"  // Optional
+  },
+  // Add more clients as needed
 ];
 const COPPER_STRANDS = `
   M0 -4C10 -4 23 -8 34 -8
@@ -131,6 +167,59 @@ function SectionTitle({ index, kicker, title, text, light = false }) {
     <div><Eyebrow light={light}>{index ? `${index} / ` : ''}{kicker}</Eyebrow><h2>{title}</h2></div>
     {text && <p>{text}</p>}
   </div>;
+}
+
+function ClientsSection() {
+  if (clients.length === 0) {
+    return null;
+  }
+
+  return (
+    <section
+      className="section clients-section"
+      aria-labelledby="clients-heading"
+    >
+      <div className="section-title">
+        <div>
+          <Eyebrow>OUR CLIENTS / RELATIONSHIPS</Eyebrow>
+          <h2 id="clients-heading">TRUSTED BY INDUSTRY.</h2>
+        </div>
+        <p>A selection of organizations we work with.</p>
+      </div>
+
+      <div className="clients-grid">
+        {clients.map((client) => (
+          <div key={client.id} className="client-cell">
+            {client.url ? (
+              <a
+                href={client.url}
+                target="_blank"
+                rel="noreferrer"
+                className="client-link"
+                aria-label={`Visit ${client.name} website`}
+              >
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  loading="lazy"
+                  decoding="async"
+                  className="client-logo-image"
+                />
+              </a>
+            ) : (
+              <img
+                src={client.logo}
+                alt={client.name}
+                loading="lazy"
+                decoding="async"
+                className="client-logo-image"
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
 
 function CableDrawing() {
@@ -648,15 +737,104 @@ function HarnessDrawing() {
   </svg>;
 }
 
-function ProductVisual({ kind }) {
+function CopperDrawing() {
+  return <svg className="product-drawing" viewBox="0 0 600 260" aria-hidden="true">
+    <g transform="translate(-36 -15.6) scale(1.12)">
+      <path d="M0 130h520" fill="none" stroke="#111312" strokeWidth="25" strokeLinecap="square" />
+      <path d="M0 130h520" fill="none" stroke="#202322" strokeWidth="19" strokeLinecap="square" />
+      <g fill="none" stroke="#F2B36F" strokeWidth="3" strokeLinecap="round">
+        <path d="M-5 130h15M40 130h15M85 130h15M130 130h15M175 130h15M220 130h15M265 130h15M310 130h15M355 130h15M400 130h15M445 130h15M490 130h15M535 130h15" />
+      </g>
+      <g fill="none" stroke="#C97932" strokeWidth="2" strokeLinecap="round">
+        <path d="M0 125h520M0 135h520" />
+      </g>
+      <g fill="#8E461C" stroke="#777A78" strokeWidth="1.5">
+        <circle cx="60" cy="130" r="12" />
+        <circle cx="170" cy="130" r="12" />
+        <circle cx="280" cy="130" r="12" />
+        <circle cx="390" cy="130" r="12" />
+        <circle cx="500" cy="130" r="12" />
+      </g>
+      <g fill="none" stroke="#777A78" strokeWidth="1.5">
+        <path d="M60 118v24M170 118v24M280 118v24M390 118v24M500 118v24" />
+      </g>
+    </g>
+    <g fill="none" stroke="#777A78" strokeWidth=".7">
+      <path d="M115 48h78l56 26M169 198h59l63-34" />
+      <path d="M441 47h40v28M441 213h40v-28" />
+    </g>
+    <g fill="#777A78" fontFamily="IBM Plex Mono, monospace" fontSize="7.5" letterSpacing=".8">
+      <text x="34" y="43">COPPER STRAND / CONDUCTOR</text>
+      <text x="35" y="202">DRAWING PROCESS</text>
+    </g>
+  </svg>;
+}
+
+function PVCDrawing() {
+  return <svg className="product-drawing" viewBox="0 0 600 260" aria-hidden="true">
+    <g transform="translate(-36 -15.6) scale(1.12)">
+      <rect x="0" y="90" width="120" height="80" fill="#202322" stroke="#111312" strokeWidth="2" />
+      <rect x="8" y="98" width="104" height="64" fill="#C7C8C5" stroke="#777A78" strokeWidth="1.5" />
+      <g fill="#F4F1EA" stroke="#777A78" strokeWidth="1">
+        <circle cx="30" cy="130" r="6" />
+        <circle cx="60" cy="130" r="6" />
+        <circle cx="90" cy="130" r="6" />
+      </g>
+      <path d="M120 130h80" fill="none" stroke="#F4F1EA" strokeWidth="4" />
+      <path d="M200 90h120v80H200z" fill="#202322" stroke="#111312" strokeWidth="2" />
+      <rect x="208" y="98" width="104" height="64" fill="#C7C8C5" stroke="#777A78" strokeWidth="1.5" />
+      <g fill="#F4F1EA" stroke="#777A78" strokeWidth="1">
+        <circle cx="230" cy="130" r="6" />
+        <circle cx="260" cy="130" r="6" />
+        <circle cx="290" cy="130" r="6" />
+      </g>
+      <path d="M320 130h80" fill="none" stroke="#F4F1EA" strokeWidth="4" />
+      <path d="M400 90h120v80H400z" fill="#202322" stroke="#111312" strokeWidth="2" />
+      <rect x="408" y="98" width="104" height="64" fill="#C7C8C5" stroke="#777A78" strokeWidth="1.5" />
+      <g fill="#F4F1EA" stroke="#777A78" strokeWidth="1">
+        <circle cx="430" cy="130" r="6" />
+        <circle cx="460" cy="130" r="6" />
+        <circle cx="490" cy="130" r="6" />
+      </g>
+      <path d="M60 90v-15M60 175v15M260 90v-15M260 175v15M460 90v-15M460 175v15" stroke="#DD2C1C" strokeWidth="2" />
+    </g>
+    <g fill="none" stroke="#777A78" strokeWidth=".7">
+      <path d="M115 48h78l56 26M169 198h59l63-34" />
+      <path d="M441 47h40v28M441 213h40v-28" />
+    </g>
+    <g fill="#777A78" fontFamily="IBM Plex Mono, monospace" fontSize="7.5" letterSpacing=".8">
+      <text x="34" y="43">COMPOUNDING / MIXING</text>
+      <text x="35" y="202">PVC COMPOUND PREPARATION</text>
+    </g>
+  </svg>;
+}
+
+function ProductVisual({ kind, imageFile }) {
   const drawings = {
+    copper: <CopperDrawing />,
+    pvc: <PVCDrawing />,
     cable: <CableCrossSection />,
     cord: <MouldedCordDrawing />,
     connector: <ConnectorDrawing />,
     harness: <HarnessDrawing />,
   };
+
   return <div className={`product-visual visual-${kind}`} aria-hidden="true">
-    {drawings[kind]}
+    {imageFile ? (
+      <>
+        {/* Original SVG preserved for future use */}
+        {/* {drawings[kind]} */}
+        <img
+          src={`/categories/${imageFile}`}
+          alt={kind}
+          className="product-family-image"
+          loading="lazy"
+          decoding="async"
+        />
+      </>
+    ) : (
+      drawings[kind]
+    )}
     <span className="visual-crosshair crosshair-a" /><span className="visual-crosshair crosshair-b" />
   </div>;
 }
@@ -665,7 +843,7 @@ function ProductModules({ limit, items = products }) {
   const shown = limit ? items.slice(0, limit) : items;
   return <div className="product-grid">{shown.map((item, i) => <article className="product-module" key={item.title}>
     <div className="product-module-top mono"><span>PRODUCT FAMILY / 0{i + 1}</span><span>↗</span></div>
-    <ProductVisual kind={item.art} />
+    <ProductVisual kind={item.art} imageFile={item.imageFile} />
     <div className="product-module-copy"><span className="technical-label">{item.badge}</span><h3>{item.title}</h3><p>{item.text}</p>
       <div className="product-tags mono">{item.tags}</div><Link to="/products" className="text-link">Explore product family <span>↗</span></Link>
     </div>
@@ -824,14 +1002,181 @@ function Shell({ children }) {
   return <><Header footerVisible={footerVisible} />{children}<Footer footerRef={footerRef} /></>;
 }
 
+const capabilities = [
+  {
+    number: "01",
+    name: "COPPER DRAWING",
+    image: "/categories/pf1.png",
+  },
+  {
+    number: "02",
+    name: "PVC COMPOUNDING",
+    image: "/categories/pf22.jpeg",
+  },
+  {
+    number: "03",
+    name: "CABLE EXTRUSION",
+    image: "/categories/pf2.png",
+  },
+  {
+    number: "04",
+    name: "MOULDED CORDS",
+    image: "/categories/pf3.png",
+  },
+  {
+    number: "05",
+    name: "HARNESS ASSEMBLY",
+    image: "/categories/pf5.png",
+  },
+];
+
 function Home() {
+
+const infographicRef = useRef(null);
+const capabilityRefs = useRef([]);
+const hubRef = useRef(null);
+const outputRef = useRef(null);
+
+const [connections, setConnections] = useState(null);
+
+useEffect(() => {
+  const container = infographicRef.current;
+  if (!container) return;
+
+  let frame;
+
+  const updateConnections = () => {
+    cancelAnimationFrame(frame);
+
+    frame = requestAnimationFrame(() => {
+      const root = container.getBoundingClientRect();
+      const hub = hubRef.current?.getBoundingClientRect();
+      const output = outputRef.current?.getBoundingClientRect();
+
+      const cards = capabilityRefs.current
+        .map((element) => element?.getBoundingClientRect())
+        .filter(Boolean);
+
+      if (!hub || !output || cards.length !== 5) return;
+
+      const mobile = window.innerWidth <= 1024;
+
+      const x = (value) => value - root.left;
+      const y = (value) => value - root.top;
+
+      const paths = [];
+
+      if (!mobile) {
+        const cardEnd = Math.max(...cards.map((card) => x(card.right)));
+        const hubStart = x(hub.left);
+        const hubEnd = x(hub.right);
+        const outputStart = x(output.left);
+
+        const busX = cardEnd + (hubStart - cardEnd) * 0.5;
+        const hubY = y(hub.top + hub.height / 2);
+
+        const cardYs = cards.map((card) =>
+          y(card.top + card.height / 2)
+        );
+
+        // Five horizontal connections to a shared vertical bus.
+        cards.forEach((card, index) => {
+          paths.push({
+            d: `M ${x(card.right)} ${cardYs[index]} H ${busX}`,
+            color: "#777A78",
+          });
+        });
+
+        // Vertical collection bus.
+        paths.push({
+          d: `M ${busX} ${Math.min(...cardYs, hubY)}
+              V ${Math.max(...cardYs, hubY)}`,
+          color: "#777A78",
+        });
+
+        // Bus into integrated manufacturing.
+        paths.push({
+          d: `M ${busX} ${hubY} H ${hubStart}`,
+          color: "#DD2C1C",
+        });
+
+        // Integrated manufacturing into customer design.
+        paths.push({
+          d: `M ${hubEnd} ${hubY}
+              H ${outputStart}`,
+          color: "#DD2C1C",
+          arrow: true,
+        });
+      } else {
+        const lastCard = cards[cards.length - 1];
+
+        const startX = x(lastCard.left + lastCard.width / 2);
+        const startY = y(lastCard.bottom);
+
+        const hubTopX = x(hub.left + hub.width / 2);
+        const hubTopY = y(hub.top);
+
+        const hubBottomX = hubTopX;
+        const hubBottomY = y(hub.bottom);
+
+        const outputX = x(output.left + output.width / 2);
+        const outputY = y(output.top);
+
+        // Vertical mobile flow.
+        paths.push({
+          d: `M ${startX} ${startY}
+              V ${(startY + hubTopY) / 2}
+              H ${hubTopX}
+              V ${hubTopY}`,
+          color: "#777A78",
+        });
+
+        paths.push({
+          d: `M ${hubBottomX} ${hubBottomY}
+              V ${(hubBottomY + outputY) / 2}
+              H ${outputX}
+              V ${outputY}`,
+          color: "#DD2C1C",
+          arrow: true,
+        });
+      }
+
+      setConnections({
+        width: root.width,
+        height: root.height,
+        paths,
+      });
+    });
+  };
+
+  const observer = new ResizeObserver(updateConnections);
+
+  [
+    container,
+    hubRef.current,
+    outputRef.current,
+    ...capabilityRefs.current,
+  ]
+    .filter(Boolean)
+    .forEach((element) => observer.observe(element));
+
+  window.addEventListener("resize", updateConnections);
+  updateConnections();
+
+  return () => {
+    cancelAnimationFrame(frame);
+    observer.disconnect();
+    window.removeEventListener("resize", updateConnections);
+  };
+}, []);
+
   return <>
     <main>
       <section className="hero">
       <div className="hero-grid" aria-hidden="true" /><div className="hero-content"><div className="hero-overline"><Eyebrow light>ENGINEERED CONNECTIONS / SINCE 1965</Eyebrow><span className="hero-origin mono">EST. / 1965<br />INDIA</span></div>
         <h1>From conductor<br />to connection.</h1>
-        <p>Manufacturing wires and cables, moulded power cords, connectors and wiring harness assemblies since 1965—with integrated manufacturing and in-house testing.</p>
-        <div className="hero-actions"><Link className="button button-white" to="/contact?type=quote">Request a quote <span>↗</span></Link><Link className="button button-outline-white" to="/products">Explore products <span>↗</span></Link></div>
+        <p>We manufacture and supply products across copper, PVC, cables, cords, connectors and wiring harnesses—and bring these capabilities together to deliver integrated assemblies and customer-specific solutions.</p>
+        <div className="hero-actions"><Link className="button button-white" to="#products">Explore our capabilities <span>↗</span></Link><Link className="button button-outline-white" to="/contact?type=quote">Discuss a custom solution <span>↗</span></Link></div>
       </div><div className="cable-drawing">
         {/* Original CableDrawing SVG temporarily disabled in favor of the supplied hero image. Keep available for restoration. */}
         {/* <CableDrawing /> */}
@@ -847,8 +1192,244 @@ function Home() {
       </div><div className="hero-caption mono">EVEREST CABLES & CONNECTORS / INDIA</div>
       </section>
       <CertStrip />
-      <section className="section products-section"><SectionTitle kicker="WHAT WE MAKE" title={<><span>One manufacturing system.</span><br /><span>Multiple ways to connect.</span></>} text="From catalogue wires and cables to assemblies made to customer drawings, explore the product families built across Everest's integrated capabilities." /><ProductModules limit={4} /><div className="section-foot"><Link className="button button-dark" to="/products">View all product families <span>↗</span></Link><span className="mono">STANDARD / CATALOGUE &nbsp;·&nbsp; CUSTOMER DRAWING</span></div></section>
-      <section className="process-section"><div className="process-inner"><SectionTitle kicker="INTEGRATED MANUFACTURING" title={<>From copper<br />to connection.</>} text="A connected sequence across five integrated shops—bringing critical stages of wire, cable and assembly production under one operation." light /><ShopSequence illustrated /><div className="process-foot mono"><span>01—05 / MANUFACTURING SEQUENCE</span><span>COPPER DRAWING → COMPOUNDING → EXTRUSION → MOULDED CORD → HARNESS</span></div></div><div className="process-vertical-mark mono">INTEGRATED MANUFACTURING / 01—05</div></section>
+      <section className="section products-section" id="products"><SectionTitle kicker="OUR PRODUCTS / MANUFACTURING CAPABILITIES" title={<><span>Five capabilities.</span><br /><span>One manufacturing system.</span></>} text="Source products from individual Everest manufacturing operations or combine capabilities for a complete assembly." /><ProductModules /><div className="section-foot"><Link className="button button-dark" to="/products">View all product families <span>↗</span></Link><span className="mono">INDIVIDUAL CAPABILITIES &nbsp;·&nbsp; INTEGRATED ASSEMBLIES</span></div></section>
+      <section className="section individual-supply-section">
+        <SectionTitle
+          kicker="INDEPENDENT PRODUCTS / INTEGRATED MANUFACTURING"
+          title={
+            <>
+              <span>Built across capabilities.</span>
+              <br />
+              <span>Delivered as one.</span>
+            </>
+          }
+          text="From individual manufacturing outputs to complete customer-specific assemblies, Everest combines relevant capabilities to meet application requirements."
+        />
+
+        <div className="manufacturing-infographic" ref={infographicRef}>
+
+        {/* Responsive connector system */}
+          {connections && (
+            <svg
+              className="connector-overlay"
+              viewBox={`0 0 ${connections.width} ${connections.height}`}
+              aria-hidden="true"
+            >
+              <defs>
+                <marker
+                  id="manufacturing-arrow"
+                  markerWidth="8"
+                  markerHeight="8"
+                  refX="7"
+                  refY="4"
+                  orient="auto"
+                  markerUnits="userSpaceOnUse"
+                >
+                  <path d="M0 0 L8 4 L0 8 Z" fill="#DD2C1C" />
+                </marker>
+              </defs>
+
+              {connections.paths.map((path, index) => (
+                <path
+                  key={index}
+                  d={path.d}
+                  fill="none"
+                  stroke={path.color}
+                  strokeWidth={path.arrow ? 2.5 : 1.5}
+                  strokeLinejoin="round"
+                  markerEnd={
+                    path.arrow ? "url(#manufacturing-arrow)" : undefined
+                  }
+                />
+              ))}
+            </svg>
+          )}
+
+          {/* LEFT: MANUFACTURING CAPABILITIES */}
+          <div className="infographic-left">
+            <div className="infographic-eyebrow mono">
+              MANUFACTURING CAPABILITIES
+            </div>
+
+            <div className="capability-modules">
+              {capabilities.map((item, index) => (
+                <div
+                  className="capability-module"
+                  key={item.number}
+                  ref={(element) => {
+                    capabilityRefs.current[index] = element;
+                  }}
+                >
+                  <div className="capability-number mono">
+                    {item.number}
+                  </div>
+
+                  <div className="capability-visual">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+
+                  <div className="capability-label mono">
+                    {item.name}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CENTER: INTEGRATED MANUFACTURING */}
+          <div className="infographic-center">
+            <div className="integration-hub" ref={hubRef}>
+              <div className="hub-eyebrow mono">
+                EVEREST / INTEGRATED MANUFACTURING
+              </div>
+
+              <div className="hub-label">
+                MULTIPLE CAPABILITIES.
+                <br />
+                ONE SYSTEM.
+              </div>
+
+              <div className="hub-sublabel mono">
+                MATERIALS / PROCESSES / ASSEMBLY
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT: CUSTOMER DESIGN */}
+          <div className="infographic-right">
+            <div className="infographic-eyebrow mono">
+              FINAL OUTPUT
+            </div>
+
+            <div className="design-output" ref={outputRef}>
+              <div className="design-question" aria-hidden="true">
+                ?
+              </div>
+
+              <div className="design-watermark" aria-hidden="true">
+                YOUR DESIGN / IDEA
+              </div>
+
+              <div className="design-caption mono">
+                CUSTOMER-SPECIFIC ASSEMBLY
+              </div>
+
+              <div className="design-description mono">
+                MANUFACTURED TO CUSTOMER DRAWINGS
+              </div>
+
+              <Link
+                className="design-cta mono"
+                to="/contact?type=quote"
+              >
+                DISCUSS YOUR ASSEMBLY <span>↗</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <section className="process-section"><div className="process-inner"><SectionTitle kicker="INTEGRATED MANUFACTURING" title={<>From copper<br />to connection.</>} text="From copper drawing and PVC compounding through cable extrusion, moulded cords and harness assembly, Everest brings manufacturing capabilities together to support individual products and integrated solutions." light /><ShopSequence illustrated /><div className="process-foot mono"><span>01—05 / MANUFACTURING SEQUENCE</span><span>COPPER DRAWING → COMPOUNDING → EXTRUSION → MOULDED CORD → HARNESS</span></div></div><div className="process-vertical-mark mono">INTEGRATED MANUFACTURING / 01—05</div></section>
+      <section className="section custom-solutions-section">
+        <SectionTitle kicker="CUSTOM ENGINEERED SOLUTIONS" title={<><span>Your requirements.</span><br />
+          <span>Our manufacturing capabilities.</span></>} text="From individual components to complete assemblies, Everest works with customer drawings, specifications and application requirements to deliver manufacturing solutions tailored to the project." />
+        <div className="custom-solutions-grid">
+
+          <div className="custom-solutions-visual">
+            <div className="custom-solutions-diagram">
+              <div className="solution-flow">
+
+                <div className="solution-flow-step">
+                  <span className="solution-step-number mono">01 / INPUT</span>
+                  <div className="solution-flow-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64">
+                      <path d="M17 8h22l9 9v39H17z" />
+                      <path d="M39 8v10h9M24 29h17M24 36h17M24 43h11" />
+                    </svg>
+                  </div>
+                  <strong>CUSTOMER<br />DRAWING</strong>
+                </div>
+
+                <div className="solution-flow-connector" aria-hidden="true">
+                  <span />
+                </div>
+
+                <div className="solution-flow-step">
+                  <span className="solution-step-number mono">02 / PROCESS</span>
+                  <div className="solution-flow-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64">
+                      <rect x="10" y="19" width="44" height="32" />
+                      <path d="M16 19V11h32v8M16 32h32M23 32v19M41 32v19" />
+                      <circle cx="32" cy="25" r="3" />
+                    </svg>
+                  </div>
+                  <strong>INTEGRATED<br />MANUFACTURING</strong>
+                </div>
+
+                <div className="solution-flow-connector" aria-hidden="true">
+                  <span />
+                </div>
+
+                <div className="solution-flow-step">
+                  <span className="solution-step-number mono">03 / OUTPUT</span>
+                  <div className="solution-flow-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64">
+                      <path d="M6 32h19M25 32c10 0 9-13 20-13h7M25 32c10 0 9 13 20 13h7" />
+                      <rect x="49" y="12" width="10" height="14" />
+                      <rect x="49" y="38" width="10" height="14" />
+                      <path d="M13 25v14M18 25v14" />
+                    </svg>
+                  </div>
+                  <strong>CUSTOM<br />ASSEMBLY</strong>
+                </div>
+              </div>
+
+              <div className="solution-verification">
+                <div className="solution-verification-rule" aria-hidden="true" />
+                <div className="solution-verification-content">
+                  <span className="solution-verification-symbol" aria-hidden="true">✓</span>
+                  <div>
+                    <strong>QUALITY / VERIFICATION</strong>
+                    <span>Applicable controls throughout manufacturing</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="solution-diagram-footer mono">
+                <span>EVEREST / CUSTOM SOLUTIONS</span>
+                <span>BUILT TO CUSTOMER REQUIREMENTS</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="custom-solutions-steps">
+            <div className="solution-step">
+              <span className="mono"> APPLICATION REQUIREMENTS</span>
+              <p>Understand the customer's application and requirements.</p>
+            </div>
+            <div className="solution-step">
+              <span className="mono"> DRAWING-BASED MANUFACTURING</span>
+              <p>Manufacture against customer-supplied drawings and specifications.</p>
+            </div>
+            <div className="solution-step">
+              <span className="mono"> INTEGRATED CAPABILITIES</span>
+              <p>Bring together relevant in-house manufacturing processes.</p>
+            </div>
+            <div className="solution-step">
+              <span className="mono"> TESTING & VERIFICATION</span>
+              <p>Apply relevant quality controls and verification procedures.</p>
+            </div>
+          </div>
+        </div>
+        <div className="section-foot">
+          <Link className="button button-dark" to="/contact?type=quote">Discuss a custom solution <span>↗</span></Link>
+        </div>
+      </section>
       <section className="quality-band"><div className="quality-diagram">
         <svg className="quality-control-diagram" viewBox="0 0 560 300" role="img" aria-labelledby="quality-diagram-title quality-diagram-desc">
           <title id="quality-diagram-title">Quality control throughout manufacturing</title>
@@ -882,12 +1463,12 @@ function Home() {
           <text x="280" y="242" textAnchor="middle" fill="#F4F1EA" fontFamily="IBM Plex Mono, monospace" fontSize="15" letterSpacing="1.2">QC</text>
         </svg>
         <div className="quality-scale mono">BIS-RECOGNIZED LAB / IN-HOUSE TESTING</div>
-      </div><div className="quality-copy"><Eyebrow>QUALITY SYSTEMS</Eyebrow><h2>Quality is not<br />a final check.</h2><p>In-house testing and integrated process control support products and assemblies across our manufacturing operations, including testing through our BIS-recognized laboratory.</p><div className="quality-tags mono"><span>BIS-RECOGNIZED LAB</span><span>IN-HOUSE TESTING</span><span>PROCESS CONTROL</span></div><Link className="text-link" to="/quality">Explore quality systems <span>↗</span></Link></div></section>
-      <section className="section industries-section"><SectionTitle kicker="INDUSTRIES SERVED" title={<>Connections for<br />critical applications.</>} text="Start with the application. Find product families and capabilities relevant to the systems you build." /><div className="industry-list">{industries.map(([name, text, links], i) => <Link className="industry-row" to="/industries" key={name}><span className="mono industry-index">0{i + 1}</span><h3>{name}</h3><p>{text}</p><span className="industry-products mono">{links}</span><span className="industry-arrow">↗</span></Link>)}</div></section>
+      </div><div className="quality-copy"><Eyebrow>QUALITY SYSTEMS</Eyebrow><h2>Quality is not<br />a final check.</h2><p>Quality is built into the manufacturing process—from material preparation and cable production to moulding and final assembly. In-house testing and verification support consistency across relevant products and applications.</p><div className="quality-tags mono"><span>BIS-RECOGNIZED LAB</span><span>IN-HOUSE TESTING</span><span>PROCESS CONTROL</span></div><Link className="text-link" to="/quality">Explore quality systems <span>↗</span></Link></div></section>
       <section className="chargecore-section"><div className="chargecore-copy"><div className="chargecore-mark mono">NEW CAPABILITY</div><Eyebrow light>EV CHARGING INFRASTRUCTURE</Eyebrow><h2>CHARGECORE<span>+</span></h2><p>A new Everest capability platform for EV charging infrastructure. Talk to our team about your application and requirements.</p><Link className="button button-white" to="/products#chargecore">Discover CHARGECORE+ <span>↗</span></Link></div><div className="chargecore-art"><ChargecoreChargingGunSVG /></div></section>
       <section className="heritage-section"><div className="heritage-year mono">1965 <span>→</span> TODAY</div><div><Eyebrow>HERITAGE</Eyebrow><h2>Continuously<br />making since 1965.</h2><p>From a modest beginning producing small cables to a broader manufacturing operation spanning wires, cables, harness assemblies, moulded cords and connectors.</p><Link className="text-link" to="/about">Our story <span>↗</span></Link></div><div className="heritage-line"><span className="heritage-node mono">1965<br />ESTABLISHED</span><span className="heritage-continuation mono">CONTINUOUS OPERATION / TODAY</span></div></section>
-      <QuoteCTA />
+      <ClientsSection />
       <section className="section insights-section"><SectionTitle kicker="INSIGHTS" title="Technical notes." text="Engineering-led reading on standards, EV infrastructure, quality and manufacturing. Articles will be published here as they become available." /><div className="insights-empty"><span className="mono">EDITORIAL INDEX / 001—004</span><p>Technical notes are in development.</p><Link className="text-link" to="/insights">Visit insights <span>↗</span></Link></div></section>
+      <QuoteCTA />
     </main>
   </>;
 }
