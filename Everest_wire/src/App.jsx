@@ -83,7 +83,7 @@ const COPPER_STRANDS = `
 
 function Brand({ light = false, tabIndex = 0 }) {
   return <Link className={`brand ${light ? 'brand-light' : ''}`} to="/" aria-label="Everest Cables & Connectors home" tabIndex={tabIndex}>
-    <img src="/images/final%20logo%20Everest.svg" alt="" />
+    <img src="/images/final_png_logo.png" alt="" />
   </Link>;
 }
 
