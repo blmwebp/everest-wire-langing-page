@@ -1287,7 +1287,7 @@ useEffect(() => {
   return <>
     <main>
       <section className="hero">
-      <div className="hero-grid" aria-hidden="true" /><div className="hero-content"><div className="hero-overline"><Eyebrow light>ENGINEERED CONNECTIONS / SINCE 1965</Eyebrow><span className="hero-origin mono">EST. / 1965<br />INDIA</span></div>
+      <div className="hero-grid" aria-hidden="true" /><div className="hero-content"><div className="hero-overline"><Eyebrow light>ENGINEERED CONNECTIONS / SINCE 1965</Eyebrow></div>
         <h1>From conductor<br />to connection.</h1>
         <p>We manufacture and supply products across copper, PVC, cables, cords, connectors and wiring harnesses—and bring these capabilities together to deliver integrated assemblies and customer-specific solutions.</p>
         <div className="hero-actions"><Link className="button button-white" to="#products">Explore our capabilities <span>↗</span></Link><Link className="button button-outline-white" to="/contact?type=quote">Discuss a custom solution <span>↗</span></Link></div>
