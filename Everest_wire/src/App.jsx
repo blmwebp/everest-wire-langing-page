@@ -40,32 +40,146 @@ const clients = [
   { 
     id: "client-01", 
     name: "Approved Client Name", 
-    logo: "/clients/client-01.png",
-    url: "https://client-website.com"  // Optional
+    logo: "/clients/1.png",
+    url: ""  // Optional
   },
   { 
-    id: "client-01", 
+    id: "client-02", 
     name: "Approved Client Name", 
-    logo: "/clients/client-01.png",
-    url: "https://client-website.com"  // Optional
+    logo: "/clients/2.png",
+    url: ""  // Optional
   },
   { 
-    id: "client-01", 
+    id: "client-03", 
     name: "Approved Client Name", 
-    logo: "/clients/client-01.png",
-    url: "https://client-website.com"  // Optional
+    logo: "/clients/3.png",
+    url: ""  // Optional
   },
   { 
-    id: "client-01", 
+    id: "client-04", 
     name: "Approved Client Name", 
-    logo: "/clients/client-01.png",
-    url: "https://client-website.com"  // Optional
+    logo: "/clients/4.png",
+    url: ""  // Optional
   },
   { 
-    id: "client-01", 
+    id: "client-05", 
     name: "Approved Client Name", 
-    logo: "/clients/client-01.png",
-    url: "https://client-website.com"  // Optional
+    logo: "/clients/5.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-06", 
+    name: "Approved Client Name", 
+    logo: "/clients/6.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-07", 
+    name: "Approved Client Name", 
+    logo: "/clients/7.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-08", 
+    name: "Approved Client Name", 
+    logo: "/clients/8.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-09", 
+    name: "Approved Client Name", 
+    logo: "/clients/9.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-10", 
+    name: "Approved Client Name", 
+    logo: "/clients/10.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-11", 
+    name: "Approved Client Name", 
+    logo: "/clients/11.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-12", 
+    name: "Approved Client Name", 
+    logo: "/clients/12.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-13", 
+    name: "Approved Client Name", 
+    logo: "/clients/13.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-14", 
+    name: "Approved Client Name", 
+    logo: "/clients/14.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-15", 
+    name: "Approved Client Name", 
+    logo: "/clients/15.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-16", 
+    name: "Approved Client Name", 
+    logo: "/clients/16.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-17", 
+    name: "Approved Client Name", 
+    logo: "/clients/17.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-18", 
+    name: "Approved Client Name", 
+    logo: "/clients/18.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-19", 
+    name: "Approved Client Name", 
+    logo: "/clients/19.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-20", 
+    name: "Approved Client Name", 
+    logo: "/clients/20.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-21", 
+    name: "Approved Client Name", 
+    logo: "/clients/21.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-22", 
+    name: "Approved Client Name", 
+    logo: "/clients/22.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-23", 
+    name: "Approved Client Name", 
+    logo: "/clients/23.png",
+    url: ""  // Optional
+  },
+  { 
+    id: "client-24", 
+    name: "Approved Client Name", 
+    logo: "/clients/24.png",
+    url: ""  // Optional
   },
   // Add more clients as needed
 ];

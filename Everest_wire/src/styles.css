@@ -1373,7 +1373,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .clients-section {
   background: #fff;
-  padding: 100px 8.2% 120px;
+  padding: 10px 8.2% 10px;
 }
 
 .clients-section .section-title {
@@ -1391,17 +1391,18 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .clients-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  row-gap: 0px;
+  column-gap: 0px; 
 }
 
 .client-cell {
-  min-height: 150px;
+  min-height: 75px;
   background: #fffffe;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 5px;
 }
 
 .client-link {
@@ -1415,8 +1416,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .client-logo-image {
   display: block;
-  max-width: 75%;
-  max-height: 70px;
+  max-width: 90%;
+  max-height: 90%;
   width: auto;
   height: auto;
   object-fit: contain;
